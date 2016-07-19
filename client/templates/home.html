@@ -1,0 +1,51 @@
+<template name="home">
+  <div class="container">
+         <div class="row">
+            <div class="text-center">
+
+              URL Shortner
+            </div>
+
+         </div>
+
+         <div class="row text center">
+           <div class="col-md-3">
+           </div>
+           <div class="col-md-6">
+             <form role="form">
+                <div class="form-group">
+                  <label for="url">Enter URL</label>
+                  <input type="url" class="form-control" id="url">
+                </div>
+{{> reCAPTCHA}}
+
+                <button type="submit" class="btn btn-primary text-center click1">Shorten</button>
+              </form>
+           </div>
+           <div class="col-md-3">
+           </div>
+           {{#if clickfalse}}
+         <div class="text-muted generating">Generating..Please wait...</div>
+         {{/if}}
+         </div>
+{{#if written}}
+<div class="row"><p></p></div>
+         <div class="row text center shortlink">
+           <div class="col-md-3">
+           </div>
+           <div class="col-md-6">
+             <div class="alert alert-success" role="alert">
+                <strong>Great! Here is the shortened URL: </strong> <a href="{{value}}">{{path}}/{{value}}</a>
+                <!-- <p>Share <i class="fa fa-facebook"></i> <i class="fa fa-twitter"></i></p> -->
+             </div>
+             <div class="col-md-3">
+             </div>
+
+         </div>
+
+
+  </div>
+  {{/if}}
+</div>
+
+</template>
